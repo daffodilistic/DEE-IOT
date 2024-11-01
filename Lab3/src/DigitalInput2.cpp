@@ -29,22 +29,22 @@ void loop() {
   if (button1on && button2on) {
     Serial.println("Both buttons are pressed");
       digitalWrite(PIN_LED_RED, LOW);
-      digitalWrite(PIN_LED_YELLOW, LOW);
+      // digitalWrite(PIN_LED_YELLOW, LOW);
       digitalWrite(PIN_LED_GREEN, LOW);
-  } else if (button1on) {
+  } else if (button1on == true && button2on == false) {
     Serial.println("Button 1 is pressed");
     digitalWrite(PIN_LED_RED, LOW);
-    digitalWrite(PIN_LED_YELLOW, HIGH);
+    // digitalWrite(PIN_LED_YELLOW, HIGH);
     digitalWrite(PIN_LED_GREEN, HIGH);
-  } else if (button2on) {
+  } else if (button1on == false && button2on == true) {
     Serial.println("Button 2 is pressed");
     digitalWrite(PIN_LED_RED, HIGH);
-    digitalWrite(PIN_LED_YELLOW, HIGH);
+    // digitalWrite(PIN_LED_YELLOW, HIGH);
     digitalWrite(PIN_LED_GREEN, LOW);
   } else {
     Serial.println("No buttons are pressed");
       digitalWrite(PIN_LED_RED, HIGH);
-      digitalWrite(PIN_LED_YELLOW, HIGH);
+      // digitalWrite(PIN_LED_YELLOW, HIGH);
       digitalWrite(PIN_LED_GREEN, HIGH);
   }
   delay(100);
